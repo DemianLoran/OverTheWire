@@ -1,0 +1,74 @@
+ssh bandit.labs.overthewire.org -p 2220 -l bandita
+bandit0 = bandit0
+bandit1 = boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+bandit2 = CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+bandit3 = UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+bandit4 = pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+bandit5 = koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+bandit6 = DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+bandit7 = HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+bandit8 = cvX2JJa4CFALtqS87jk27qwqGhBM9plV ( grep millionth data.txt )
+bandit9 = UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR ( sort data.txt | uniq -u )
+bandit10= truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk ( strings data.txt | grep '===' ) con script en una línea quedaria-> contador=1; strings data.txt | grep '===' | while read line; do echo "Linea $contador: $line"; let contador+=1; done | awk NR==4 | awk 'NF{print $NF}'
+bandit11= IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR ( base64 data.txt -d )
+bandit12= 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu ( cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m' )
+bandit13= 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL ( script ./descompresor.sh nombre_del_ArchivoComprimido )
+bandit14= 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e ( ssh -i sshkey.private bandit14@localhost )
+bandit15= BfMYroe26WYalil77FoDi9qh59eK5xNr ( echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000)
+bandit16= cluFn7wTiGryunymYOu4RcffSxQluehd ( openssl s_client -connect 127.0.0.1:30001 )
+bandit17= xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn ( ssh -i id_rsa bandit17@localhost <- para obtener el listado de puertos abiertos nmap --open -T5 -v -n -p31000-32000 127.0.0.1 y luego para probar cada uno y obtener la clave rsa, openssl s_client -connect 127.0.0.1:31790, copio toda la clave RSA y creo un directorio con mktemp -d, y accedo con cd /tmp/tmp.nRYUfLP2mR, y edito la clave con nano id_rsa )
+bandit18= kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd ( diff passwords.old passwords.new )
+bandit19= IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x ( ssh bandit.labs.overthewire.org -p 2220 -l bandit18 bash )
+bandit20= GbKksEFF4yrVs6il55v6gwY5aVje5f0j ( cat /etc/bandit_pass/bandit20 para ver el archivo con la clave, ./bandit20-do bash -p para acceder como bandit20 con el script -do )
+bandit21= gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr ( para realizar la escucha con una ventana duplicada de bandit20 uso nc -nlvp 5757, desde la otra llamo a ./suconnect 5757, y desde la escucha le paso la pass de bandit20 para que me devuelva la pass de bandit21 )
+bandit22= Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI ls -l /etc/cron.d -> cat del archivo de bandit22, cat sobre el tmp 
+bandit23= jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n igual, y cat sobre el script y replicar el comando echo para obtner el tmp/... y cat sobre ese para obtener la clave
+bandit24= UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ ( creo una carpeta temporal con mktemp -d, y le doy permisos de escritura y ejecucion, y en un scrip pongo lo siguiente para copiarme la clave al archivo deseado y poder verla #!/bin/bash cat /etc/bandit_pass/bandit24 > /tmp/tmp.YUvXsyaCXe/cliinpowned.txt , luego copio el scrip a la carpeta del usuario y espero que se ejecute cp script.sh /var/spool/bandit24/ para que genere el arhivo con la clave)
+bandit25= uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG ( creamos una carpeta temporal con mktemp -d y dentro de esta creamos un script para ejecutar un for y poder crear toda la variacion de claves -> 
+#!/bin/bash
+for i in {0000..9999};do
+        echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i"
+done
+luego ejecuto el escript y paso el resultado a un diccionario.txt ./script.sh > diccionario.txt , luego leo el diccionario y lo paso por ncat al 30002 y obtengo la clave del bandit25 -> cat diccionario.txt | nc localhost 30002 | grep -v -E "Wrong|Please" )
+
+bandit26= 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z ( ssh -i bandit26.sshkey bandit26@localhost -> achicar la pantalla para forzar el more, luego v para poder entrar en modo edicion, luego :e /etc/bandit_pass/bandit26 , :set shell=/bin/bash, :shell ) 
+
+  _                     _ _ _   ___   __  
+ | |                   | (_) | |__ \ / /  
+ | |__   __ _ _ __   __| |_| |_   ) / /_  
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \ 
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+ |_.__/ \__,_|_| |_|\__,_|_|\__|____\___/
+
+bandit27= 3ba3118a22e93127a4ed485be72ef5ea ( desde el bashh de bandit26, ./bandit27-do bash -p, cat /etc/bandit_pass/bandit27 ) 
+bandit28= 0ef186ac70e04ea33b4c1853d2526fa2 ( creo una carpeta con mktemp -d y en ella clone el repo, con git clone ssh://bandit27-git@localhost/home/bandit27-git/repo , luego en el mismo hay un directorio repo que tiene un README con la clave )
+bandit29= bbc96594b4e001778eee9975372716b2 ( creo una carpeta con mktemp -d y clone el repositorio, luego ejecuto un diff entre los commits para ver el cambio de la clave por los ****** , se puede hacer con git log -p) 
+bandit30= 5b90576bedb2cc04c86a9e924ce42faf ( creo la carpeta, clono el repo, y como no esta el cambio en la rama master, verifico las ramas git branch -r, y hago un git checkout de la rama dev, y en esa el archivo README tiene la clave )
+bandit31= 47e603bb428404d265f59c42920d81e5 ( creo un carpeta, clono el repo, y verifico que no hay commits, pero si hay tags, con git tag -l, luego veo el tag secret con git show secret, y obtengo la clave ) 
+bandit32= 56a9bf19c63d650ce78e6ec0354ee45e ( creo una carpeta, clono el repo, leo el readme y veo que tiene una descripcion de un archivo a crear key.txt,  echo "May I come in?" > key.txt, luego git add, pero para eso debo borrar la carpeta .gitignore con rm, luego hago el add, luego el commit git commit -m "Añadimos nueva clave", y realizo un push git push -u origin master, coloco la clave de bandit31 y obtengo la de bandit32 ) 
+bandit33= c9c3199ddf4121b10cf581a98d51caee ( con $0 logro salir del uppershell y puedo leer el cat /etc/bandit_pass/bandit33 y obtengo la clave.
+FINAL
+#################
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
